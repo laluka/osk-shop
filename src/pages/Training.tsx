@@ -76,7 +76,7 @@ const Training = () => {
         <div className="pb-20 relative">
             <div className="relative h-[35vh] flex items-center justify-center overflow-hidden mb-12">
                 <img
-                    src="/assets/original/trainings-thumb.jpg"
+                    src={`${import.meta.env.BASE_URL}assets/original/trainings-thumb.jpg`}
                     alt="Training Service"
                     className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-overlay"
                 />
@@ -113,10 +113,10 @@ const Training = () => {
                                     <h2 className="text-3xl font-bold font-heading">{item.title}</h2>
                                     {/* Badges */}
                                     {item.level === "Level 10" && (
-                                        <img src="/assets/original/training-badge-rookie.png" alt="Rookie Badge" className="w-20 h-20 absolute top-6 right-6 opacity-90 drop-shadow-[0_0_15px_rgba(37,99,235,0.5)]" />
+                                        <img src={`${import.meta.env.BASE_URL}assets/original/training-badge-rookie.png`} alt="Rookie Badge" className="w-20 h-20 absolute top-6 right-6 opacity-90 drop-shadow-[0_0_15px_rgba(37,99,235,0.5)]" />
                                     )}
                                     {item.level === "Level 30" && (
-                                        <img src="/assets/original/training-badge-expert.png" alt="Expert Badge" className="w-20 h-20 absolute top-6 right-6 opacity-90 drop-shadow-[0_0_15px_rgba(249,115,22,0.5)]" />
+                                        <img src={`${import.meta.env.BASE_URL}assets/original/training-badge-expert.png`} alt="Expert Badge" className="w-20 h-20 absolute top-6 right-6 opacity-90 drop-shadow-[0_0_15px_rgba(249,115,22,0.5)]" />
                                     )}
                                 </div>
 

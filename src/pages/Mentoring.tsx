@@ -6,7 +6,7 @@ const Mentoring = () => {
         <div className="pb-20">
             <div className="relative h-[35vh] flex items-center justify-center overflow-hidden mb-12">
                 <img
-                    src="/assets/original/mentoring-thumb.jpg"
+                    src={`${import.meta.env.BASE_URL}assets/original/mentoring-thumb.jpg`}
                     alt="Mentoring Service"
                     className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-overlay"
                 />
@@ -56,17 +56,17 @@ const Mentoring = () => {
 
                     <div className="grid md:grid-cols-3 gap-6">
                         <div className="flex flex-col items-center p-4 bg-[#1e293b] rounded-xl border border-white/5 hover:border-[#c026d3]/50 transition-colors">
-                            <img src="/assets/original/mentoring-1h.png" alt="1 Hour Session" className="w-full h-auto mb-4 rounded-lg" />
+                            <img src={`${import.meta.env.BASE_URL}assets/original/mentoring-1h.png`} alt="1 Hour Session" className="w-full h-auto mb-4 rounded-lg" />
                             <h3 className="font-bold text-lg">1 Hour Session</h3>
                             <p className="text-sm text-gray-400 mt-2">Perfect for quick blockers</p>
                         </div>
                         <div className="flex flex-col items-center p-4 bg-[#1e293b] rounded-xl border border-white/5 hover:border-[#c026d3]/50 transition-colors">
-                            <img src="/assets/original/mentoring-1d.png" alt="1 Day Deep Dive" className="w-full h-auto mb-4 rounded-lg" />
+                            <img src={`${import.meta.env.BASE_URL}assets/original/mentoring-1d.png`} alt="1 Day Deep Dive" className="w-full h-auto mb-4 rounded-lg" />
                             <h3 className="font-bold text-lg">1 Day Deep Dive</h3>
                             <p className="text-sm text-gray-400 mt-2">Architecture & Analysis</p>
                         </div>
                         <div className="flex flex-col items-center p-4 bg-[#1e293b] rounded-xl border border-white/5 hover:border-[#c026d3]/50 transition-colors">
-                            <img src="/assets/original/mentoring-1w.png" alt="1 Week Sprint" className="w-full h-auto mb-4 rounded-lg" />
+                            <img src={`${import.meta.env.BASE_URL}assets/original/mentoring-1w.png`} alt="1 Week Sprint" className="w-full h-auto mb-4 rounded-lg" />
                             <h3 className="font-bold text-lg">1 Week Sprint</h3>
                             <p className="text-sm text-gray-400 mt-2">Full Project Support</p>
                         </div>

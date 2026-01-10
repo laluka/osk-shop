@@ -21,7 +21,7 @@ const ServiceCard = ({ title, description, icon: Icon, link, delay = 0, image }:
             {image && (
                 <>
                     <img
-                        src={image}
+                        src={image.startsWith('/') ? `${import.meta.env.BASE_URL}${image.slice(1)}` : image}
                         alt={title}
                         className="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity"
                     />

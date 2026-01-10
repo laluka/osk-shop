@@ -30,7 +30,7 @@ const Partners = ({ title, items, className = "py-12" }: PartnersProps) => {
                                 className="w-full h-full flex items-center justify-center transform group-hover:scale-110 transition-transform duration-500 z-10"
                             >
                                 <img
-                                    src={partner.img}
+                                    src={partner.img.startsWith('/') ? `${import.meta.env.BASE_URL}${partner.img.slice(1)}` : partner.img}
                                     alt={partner.name}
                                     className="max-h-40 max-w-[85%] object-contain filter brightness-95 contrast-110 group-hover:brightness-110 group-hover:drop-shadow-[0_0_20px_rgba(255,255,255,0.2)] transition-all duration-500"
                                 />

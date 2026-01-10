@@ -11,7 +11,7 @@ const Home = () => {
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0">
                     <img
-                        src="/assets/original/hero-bg.jpg"
+                        src={`${import.meta.env.BASE_URL}assets/original/hero-bg.jpg`}
                         alt="Cybersecurity Background"
                         className="w-full h-full object-cover opacity-40 mix-blend-overlay"
                     />
@@ -77,7 +77,7 @@ const Home = () => {
                                 <div className="relative group">
                                     <div className="absolute -inset-2 bg-gradient-to-r from-[#c026d3] to-[#78174d] rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-500" />
                                     <img
-                                        src="/assets/louka-laluka.png"
+                                        src={`${import.meta.env.BASE_URL}assets/louka-laluka.png`}
                                         alt="Louka Jacques-Chevallier"
                                         className="relative rounded-xl w-full aspect-square object-cover shadow-2xl"
                                     />

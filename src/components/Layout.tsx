@@ -26,7 +26,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <nav className="fixed w-full top-0 z-50 bg-[#0f172a]/80 backdrop-blur-md border-b border-white/5">
         <div className="container mx-auto px-4 h-20 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 group">
-            <img src="/assets/original/logo.png" alt="OffenSkill Logo" className="w-10 h-10 object-contain" />
+            <img src={`${import.meta.env.BASE_URL}assets/original/logo.png`} alt="OffenSkill Logo" className="w-10 h-10 object-contain" />
             <span className="font-heading font-bold text-xl tracking-tight text-white group-hover:text-[#c026d3] transition-colors">
               Offen<span className="text-[#c026d3] group-hover:text-white transition-colors">Skill</span>
             </span>
