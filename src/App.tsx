@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import Pentest from './pages/Pentest';
@@ -28,6 +28,7 @@ function App() {
           <Route path="/training" element={<Training />} />
           <Route path="/mentoring" element={<Mentoring />} />
           <Route path="/faq" element={<FAQ />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Layout>
     </Router>
