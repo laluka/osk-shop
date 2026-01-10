@@ -49,4 +49,4 @@ This project is proprietary and confidential.
 
 ## 📧 Contact
 
-For questions or support, contact: contact@offenskill.com
+For questions or support, contact: loukajc+shop@offenskill.com
