@@ -141,10 +141,45 @@ const Training = () => {
                     ))}
                 </div>
 
-                <AnimatedSection className="text-center pb-8">
-                    <p className="text-lg text-gray-300">
-                        Ready to level up? Join one of our public sessions or <span className="text-[#c026d3] font-bold">reach out</span> via the links in the footer to book a private training for your team! 👇
-                    </p>
+                <AnimatedSection className="max-w-4xl mx-auto pb-20">
+                    <div className="bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 p-8 md:p-12 shadow-2xl relative overflow-hidden group">
+                        {/* Decorative background accent */}
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-[#c026d3]/10 rounded-full blur-3xl -mr-32 -mt-32" />
+
+                        <div className="relative z-10 text-center space-y-8">
+                            <div>
+                                <h2 className="text-2xl md:text-3xl font-bold mb-4">
+                                    Upcoming trainings are ⚠️ <span className="text-[#c026d3] font-mono">onDemand()</span> ⚠️
+                                </h2>
+                                <p className="text-lg text-gray-300">
+                                    Groups can be free-formed or already constituted, starting at <span className="text-white font-bold">&ge;2 students</span>
+                                </p>
+                            </div>
+
+                            <div className="flex flex-col gap-8 text-left max-w-2xl mx-auto">
+                                <div className="flex items-start gap-4">
+                                    <div className="text-3xl shrink-0">🛠️</div>
+                                    <p className="text-gray-300 text-lg">The content is always tweaked for the attendees needs</p>
+                                </div>
+                                <div className="flex items-start gap-4">
+                                    <div className="text-3xl shrink-0">📅</div>
+                                    <p className="text-gray-300 text-lg">The date is always chosen as a common agreement with every participants</p>
+                                </div>
+                                <div className="flex items-start gap-4">
+                                    <div className="text-3xl shrink-0">💰</div>
+                                    <p className="text-gray-300 text-lg font-medium">
+                                        Usually <span className="text-white">500&euro;/day/attendee</span>, with a discount applied for <span className="text-[#c026d3]">&gt;6 attendees</span> or <span className="text-[#c026d3]">&gt;3 days</span> of training! 😉
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className="pt-8 border-t border-white/5">
+                                <p className="text-lg text-gray-300">
+                                    Ready to level up? Join one of our public sessions or <a href="https://linktr.ee/TheLaluka" target="_blank" rel="noopener noreferrer" className="text-[#c026d3] font-bold hover:underline">reach out</a> via the links in the footer to book a private training for your team! 👇
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </AnimatedSection>
             </div>
 
