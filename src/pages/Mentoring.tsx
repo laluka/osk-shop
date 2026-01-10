@@ -4,7 +4,7 @@ import { Users, Lightbulb, Compass } from 'lucide-react';
 const Mentoring = () => {
     return (
         <div className="pb-20">
-            <div className="relative h-[50vh] flex items-center justify-center overflow-hidden mb-12">
+            <div className="relative h-[35vh] flex items-center justify-center overflow-hidden mb-12">
                 <img
                     src="/assets/original/mentoring-thumb.jpg"
                     alt="Mentoring Service"
@@ -13,7 +13,7 @@ const Mentoring = () => {
                 <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a]/20 via-[#0f172a]/60 to-[#0f172a]" />
 
                 <AnimatedSection className="relative z-10 text-center px-4">
-                    <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 drop-shadow-lg">
+                    <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6">
                         Personal <span className="text-[#c026d3]">Mentoring</span>
                     </h1>
                     <p className="text-xl text-gray-200 max-w-2xl mx-auto font-medium">
@@ -23,7 +23,7 @@ const Mentoring = () => {
             </div>
 
             <div className="container mx-auto px-4">
-                <div className="max-w-4xl mx-auto space-y-12">
+                <div className="space-y-12">
                     <AnimatedSection className="grid md:grid-cols-2 gap-8 items-center">
                         <div>
                             <h2 className="text-3xl font-bold mb-4">Your Expert Partner</h2>
@@ -31,7 +31,7 @@ const Mentoring = () => {
                                 Need a second pair of eyes on a complex problem? Or guidance on your career path?
                                 Our mentoring service is designed to be flexible. Book by the hour, day, or week.
                             </p>
-                            <a href="mailto:contact@offenskill.com" className="btn">
+                            <a href="mailto:loukajc+shop@offenskill.com" target="_blank" className="btn">
                                 Get in Touch
                             </a>
                         </div>
@@ -77,7 +77,7 @@ const Mentoring = () => {
                         <p className="text-gray-300 max-w-2xl mx-auto mb-8">
                             Whether you need a one-off session or regular coaching, we can tailor a plan for you.
                         </p>
-                        <a href="mailto:contact@offenskill.com" className="btn text-white">
+                        <a href="mailto:loukajc+shop@offenskill.com" target="_blank" className="btn text-white">
                             Book a Session
                         </a>
                     </AnimatedSection>

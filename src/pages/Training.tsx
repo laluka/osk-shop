@@ -74,7 +74,7 @@ const Training = () => {
 
     return (
         <div className="pb-20 relative">
-            <div className="relative h-[50vh] flex items-center justify-center overflow-hidden mb-12">
+            <div className="relative h-[35vh] flex items-center justify-center overflow-hidden mb-12">
                 <img
                     src="/assets/original/trainings-thumb.jpg"
                     alt="Training Service"
@@ -83,7 +83,7 @@ const Training = () => {
                 <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a]/20 via-[#0f172a]/60 to-[#0f172a]" />
 
                 <AnimatedSection className="relative z-10 text-center px-4">
-                    <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 drop-shadow-lg">
+                    <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6">
                         Training <span className="text-[#c026d3]">Programs</span>
                     </h1>
                     <p className="text-xl text-gray-200 max-w-2xl mx-auto font-medium">
@@ -93,7 +93,7 @@ const Training = () => {
             </div>
 
             <div className="container mx-auto px-4">
-                <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div className="grid md:grid-cols-2 gap-8 mx-auto mb-12">
                     {levels.map((item, i) => (
                         <AnimatedSection key={i} className="h-full">
                             <div
@@ -140,6 +140,12 @@ const Training = () => {
                         </AnimatedSection>
                     ))}
                 </div>
+
+                <AnimatedSection className="text-center pb-8">
+                    <p className="text-lg text-gray-300">
+                        Ready to level up? Join one of our public sessions or <span className="text-[#c026d3] font-bold">reach out</span> via the links in the footer to book a private training for your team! 👇
+                    </p>
+                </AnimatedSection>
             </div>
 
             {/* Modal */}

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Github, Linkedin, Mail, ChevronDown, ExternalLink } from 'lucide-react';
+import { Menu, X, Linkedin, Mail, ChevronDown, ExternalLink, Link2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
@@ -39,8 +39,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 key={link.path}
                 to={link.path}
                 className={`font-medium transition-colors ${location.pathname === link.path
-                    ? 'text-[#c026d3]'
-                    : 'text-gray-300 hover:text-white'
+                  ? 'text-[#c026d3]'
+                  : 'text-gray-300 hover:text-white'
                   }`}
               >
                 {link.name}
@@ -89,8 +89,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             <Link
               to="/faq"
               className={`font-medium transition-colors ${location.pathname === '/faq'
-                  ? 'text-[#c026d3]'
-                  : 'text-gray-300 hover:text-white'
+                ? 'text-[#c026d3]'
+                : 'text-gray-300 hover:text-white'
                 }`}
             >
               FAQ
@@ -122,8 +122,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                     to={link.path}
                     onClick={() => setIsOpen(false)}
                     className={`text-lg font-medium ${location.pathname === link.path
-                        ? 'text-[#c026d3]'
-                        : 'text-gray-300'
+                      ? 'text-[#c026d3]'
+                      : 'text-gray-300'
                       }`}
                   >
                     {link.name}
@@ -150,8 +150,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                   to="/faq"
                   onClick={() => setIsOpen(false)}
                   className={`text-lg font-medium ${location.pathname === '/faq'
-                      ? 'text-[#c026d3]'
-                      : 'text-gray-300'
+                    ? 'text-[#c026d3]'
+                    : 'text-gray-300'
                     }`}
                 >
                   FAQ
@@ -177,19 +177,19 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             </div>
 
             <div className="flex items-center gap-6">
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#c026d3] transition-colors">
-                <Github className="w-6 h-6" />
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#c026d3] transition-colors">
+              <a href="https://www.linkedin.com/in/louka-jacques-chevallier/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#c026d3] transition-colors" aria-label="LinkedIn">
                 <Linkedin className="w-6 h-6" />
               </a>
-              <a href="mailto:contact@offenskill.com" className="text-gray-400 hover:text-[#c026d3] transition-colors">
+              <a href="mailto:loukajc+shop@offenskill.com" target="_blank" className="text-gray-400 hover:text-[#c026d3] transition-colors" aria-label="Email">
                 <Mail className="w-6 h-6" />
+              </a>
+              <a href="https://linktr.ee/TheLaluka" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#c026d3] transition-colors" aria-label="Linktree">
+                <Link2 className="w-6 h-6" />
               </a>
             </div>
           </div>
           <div className="mt-8 text-center text-gray-500 text-sm">
-            © {new Date().getFullYear()} OffenSkill. All rights reserved.
+            © 2025{new Date().getFullYear() > 2025 ? `-${new Date().getFullYear()}` : ''} OffenSkill. All rights reserved.
           </div>
         </div>
       </footer>
