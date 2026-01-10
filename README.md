@@ -19,6 +19,20 @@ npm run build
 
 The production build will be created in the `dist/` directory.
 
+## 📸 OpenGraph Thumbnails
+
+To have nice previews when sharing links on social media, you can generate screenshots of your pages:
+
+```bash
+# One-time setup: install playwright and chromium
+npx playwright install chromium
+
+# Generate screenshots (runs a local dev server automatically)
+npm run thumbnails
+```
+
+Thumbnails are saved in `public/assets/thumbnails/`. Make sure to commit them before pushing to GitHub!
+
 ## 📁 Project Structure
 
 ```

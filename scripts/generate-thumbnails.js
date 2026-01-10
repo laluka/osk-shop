@@ -22,8 +22,8 @@ async function generateThumbnails() {
         fs.mkdirSync(OUTPUT_DIR, { recursive: true });
     }
 
-    console.log('🚀 Starting preview server...');
-    const server = spawn('npm', ['run', 'preview', '--', '--port', PORT.toString()], {
+    console.log('🚀 Starting dev server...');
+    const server = spawn('npm', ['run', 'dev', '--', '--port', PORT.toString(), '--strictPort'], {
         shell: true,
         stdio: 'inherit'
     });
@@ -34,8 +34,8 @@ async function generateThumbnails() {
     console.log('📸 Starting browser...');
     const browser = await chromium.launch();
     const context = await browser.newContext({
-        viewport: { width: 1200, height: 630 }, // OG standard size
-        deviceScaleFactor: 2,
+        viewport: { width: 1920, height: 1080 },
+        deviceScaleFactor: 1,
     });
 
     for (const route of routes) {
