@@ -102,21 +102,23 @@ const Training = () => {
                             >
                                 <div className={`absolute top-0 right-0 w-40 h-40 bg-${item.color}-500/10 rounded-full blur-3xl -mr-20 -mt-20 group-hover:bg-${item.color}-500/20 transition-all`} />
 
-                                <div className="mb-6 inline-flex p-4 rounded-xl bg-[#0f172a] text-[#c026d3]">
-                                    <item.icon className="w-8 h-8" />
-                                </div>
+                                <div className="flex items-center gap-5 mb-8 relative z-10">
+                                    <div className="p-4 rounded-xl bg-[#0f172a] text-[#c026d3] shrink-0">
+                                        <item.icon className="w-8 h-8" />
+                                    </div>
+                                    <div className="flex-grow">
+                                        <span className="text-sm font-bold tracking-wider text-[#c026d3] uppercase mb-0.5 block">
+                                            {item.level}
+                                        </span>
+                                        <h2 className="text-2xl font-bold font-heading leading-tight">{item.title}</h2>
+                                    </div>
 
-                                <div className="mb-4">
-                                    <span className="text-sm font-bold tracking-wider text-[#c026d3] uppercase mb-1 block">
-                                        {item.level}
-                                    </span>
-                                    <h2 className="text-3xl font-bold font-heading">{item.title}</h2>
                                     {/* Badges */}
                                     {item.level === "Level 10" && (
-                                        <img src={`${import.meta.env.BASE_URL}assets/original/training-badge-rookie.png`} alt="Rookie Badge" className="w-20 h-20 absolute top-6 right-6 opacity-90 drop-shadow-[0_0_15px_rgba(37,99,235,0.5)]" />
+                                        <img src={`${import.meta.env.BASE_URL}assets/original/training-badge-rookie.png`} alt="Rookie Badge" className="w-16 h-16 opacity-90 drop-shadow-[0_0_15px_rgba(37,99,235,0.4)]" />
                                     )}
                                     {item.level === "Level 30" && (
-                                        <img src={`${import.meta.env.BASE_URL}assets/original/training-badge-expert.png`} alt="Expert Badge" className="w-20 h-20 absolute top-6 right-6 opacity-90 drop-shadow-[0_0_15px_rgba(249,115,22,0.5)]" />
+                                        <img src={`${import.meta.env.BASE_URL}assets/original/training-badge-expert.png`} alt="Expert Badge" className="w-16 h-16 opacity-90 drop-shadow-[0_0_15px_rgba(249,115,22,0.4)]" />
                                     )}
                                 </div>
 
@@ -149,7 +151,7 @@ const Training = () => {
                         <div className="relative z-10 text-center space-y-8">
                             <div>
                                 <h2 className="text-2xl md:text-3xl font-bold mb-4">
-                                    Upcoming trainings are ⚠️ <span className="text-[#c026d3] font-mono">onDemand()</span> ⚠️
+                                    Upcoming trainings are <span className="text-[#c026d3] font-mono">onDemand()</span>
                                 </h2>
                                 <p className="text-lg text-gray-300">
                                     Groups can be free-formed or already constituted, starting at <span className="text-white font-bold">&ge;2 students</span>
@@ -168,7 +170,7 @@ const Training = () => {
                                 <div className="flex items-start gap-4">
                                     <div className="text-3xl shrink-0">💰</div>
                                     <p className="text-gray-300 text-lg font-medium">
-                                        Usually <span className="text-white">500&euro;/day/attendee</span>, with a discount applied for <span className="text-[#c026d3]">&gt;6 attendees</span> or <span className="text-[#c026d3]">&gt;3 days</span> of training! 😉
+                                        Usually <span className="text-white">500&euro;/day/attendee</span>, with a discount applied for <span className="text-[#c026d3]">&gt;6 attendees</span> or <span className="text-[#c026d3]">&gt;3 days</span> of training!
                                     </p>
                                 </div>
                             </div>

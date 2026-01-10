@@ -1,5 +1,7 @@
 import AnimatedSection from '../components/AnimatedSection';
 import ServiceCard from '../components/ServiceCard';
+import LogoMarquee from '../components/LogoMarquee';
+import { customers, partners } from '../data/partners';
 import { Shield, GraduationCap, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -77,7 +79,7 @@ const Home = () => {
                                 <div className="relative group">
                                     <div className="absolute -inset-2 bg-gradient-to-r from-[#c026d3] to-[#78174d] rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-500" />
                                     <img
-                                        src={`${import.meta.env.BASE_URL}assets/louka-laluka.png`}
+                                        src={`${import.meta.env.BASE_URL}assets/original/louka-laluka.png`}
                                         alt="Louka Jacques-Chevallier"
                                         className="relative rounded-xl w-full aspect-square object-cover shadow-2xl"
                                     />
@@ -106,6 +108,22 @@ const Home = () => {
                     </div>
                 </AnimatedSection>
             </section>
+
+            {/* Logo Marquees */}
+            <div className="mt-20">
+                <LogoMarquee
+                    title="Happy Customers"
+                    items={customers}
+                    titleStyle="white-purple"
+                    speed={50}
+                />
+                <LogoMarquee
+                    title="Trusted Partners"
+                    items={partners}
+                    titleStyle="purple-white"
+                    speed={60}
+                />
+            </div>
         </div>
     );
 };

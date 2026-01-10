@@ -1,6 +1,4 @@
 import AnimatedSection from '../components/AnimatedSection';
-import Partners from '../components/Partners';
-import { customers, partners } from '../data/partners';
 import { HelpCircle, GraduationCap, Shield, Users } from 'lucide-react';
 
 const FAQ = () => {
@@ -115,19 +113,6 @@ const FAQ = () => {
                 ))}
             </div>
 
-            {/* Trusted Customers */}
-            <Partners
-                title="Happy Customers"
-                items={customers}
-                className="max-w-6xl mx-auto mb-20"
-            />
-
-            {/* Partners */}
-            <Partners
-                title="Trusted Partners"
-                items={partners}
-                className="max-w-5xl mx-auto"
-            />
         </div>
     );
 };
