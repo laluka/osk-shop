@@ -1,11 +1,24 @@
 import AnimatedSection from '../components/AnimatedSection';
 import ServiceCard from '../components/ServiceCard';
-import LogoMarquee from '../components/LogoMarquee';
 import { customers, partners } from '../data/partners';
 import { Shield, GraduationCap, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useMemo } from 'react';
+
+// Fisher-Yates shuffle algorithm
+const shuffleArray = <T,>(array: T[]): T[] => {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+};
 
 const Home = () => {
+    // Shuffle arrays on each component mount (page load)
+    const shuffledCustomers = useMemo(() => shuffleArray(customers), []);
+    const shuffledPartners = useMemo(() => shuffleArray(partners), []);
     return (
         <div className="flex flex-col gap-12 pb-12">
             {/* Hero Section */}
@@ -109,21 +122,65 @@ const Home = () => {
                 </AnimatedSection>
             </section>
 
-            {/* Logo Marquees */}
-            <div className="mt-20">
-                <LogoMarquee
-                    title="Happy Customers"
-                    items={customers}
-                    titleStyle="white-purple"
-                    speed={50}
-                />
-                <LogoMarquee
-                    title="Trusted Partners"
-                    items={partners}
-                    titleStyle="purple-white"
-                    speed={60}
-                />
-            </div>
+            {/* Happy Customers */}
+            <section className="container mx-auto px-4 mt-20">
+                <AnimatedSection>
+                    <h2 className="text-3xl md:text-5xl font-heading font-bold mb-12 text-center text-white">
+                        <span className="text-[#c026d3]">Happy</span> Customers
+                    </h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 justify-items-center">
+                        {shuffledCustomers.map((customer) => (
+                            <div
+                                key={customer.url}
+                                className="w-full max-w-[280px] h-40 flex items-center justify-center p-6 bg-white/5 backdrop-blur-sm rounded-3xl border border-white/10 hover:border-[#c026d3]/40 transition-all duration-300 group"
+                            >
+                                <a
+                                    href={customer.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-full h-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:rotate-2"
+                                >
+                                    <img
+                                        src={customer.img.startsWith('/') ? `${import.meta.env.BASE_URL}${customer.img.slice(1)}` : customer.img}
+                                        alt={customer.name}
+                                        className="max-h-28 max-w-full object-contain"
+                                    />
+                                </a>
+                            </div>
+                        ))}
+                    </div>
+                </AnimatedSection>
+            </section>
+
+            {/* Trusted Partners */}
+            <section className="container mx-auto px-4 mt-20">
+                <AnimatedSection>
+                    <h2 className="text-3xl md:text-5xl font-heading font-bold mb-12 text-center text-white">
+                        Trusted <span className="text-[#c026d3]">Partners</span>
+                    </h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 justify-items-center">
+                        {shuffledPartners.map((partner) => (
+                            <div
+                                key={partner.url}
+                                className="w-full max-w-[280px] h-40 flex items-center justify-center p-6 bg-white/5 backdrop-blur-sm rounded-3xl border border-white/10 hover:border-[#c026d3]/40 transition-all duration-300 group"
+                            >
+                                <a
+                                    href={partner.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-full h-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:rotate-2"
+                                >
+                                    <img
+                                        src={partner.img.startsWith('/') ? `${import.meta.env.BASE_URL}${partner.img.slice(1)}` : partner.img}
+                                        alt={partner.name}
+                                        className="max-h-28 max-w-full object-contain"
+                                    />
+                                </a>
+                            </div>
+                        ))}
+                    </div>
+                </AnimatedSection>
+            </section>
         </div>
     );
 };
