@@ -13,11 +13,12 @@ const Training = () => {
             icon: Terminal,
             color: "blue",
             desc: "The foundation. Understand the basics of offensive security.",
-            fullDesc: "This training is designed for people who want to start their journey into the offensive world. We will cover the basics of web security, offensive tooling, and how to structure your recon process. This is a 2-day training with a lot of practice.",
+            fullDesc: "This training is designed for people who want to start their journey into the offensive world. We will cover the basics of web security, offensive tooling, and how to structure your recon process. This is a 3-day training with a lot of practice, capped off with a full day dedicated to AI-assisted offensive workflows.",
             keyTakeaways: [
                 "Get familiar with linux command line & efficiency tooling",
                 "Get to know BurpSuite, Chrome Dev Tools, ffuf, and more!",
-                "Spend time practicing & exploiting on OWASP top 10 bugs"
+                "Spend time practicing & exploiting on OWASP top 10 bugs",
+                "Leverage AI assistants to supercharge recon and exploitation"
             ],
             prerequisites: [
                 "Basic knowledge of Linux & Command Line (ls, cd, curl, man)",
@@ -35,6 +36,12 @@ const Training = () => {
                     "How to structure your recon process",
                     "Exploiting a production-like application to the full",
                     "Opening on linux privilege escalations techniques"
+                ],
+                "Day 3 — AI": [
+                    "Prompt engineering fundamentals for offensive use",
+                    "AI-assisted recon, fuzzing and payload crafting",
+                    "Using LLMs to read code and spot vulnerable patterns",
+                    "Hands-on: solve challenges paired with an AI copilot"
                 ]
             }
         },
@@ -44,12 +51,13 @@ const Training = () => {
             icon: Cpu,
             color: "orange",
             desc: "Cutting edge. Research and 0-day discovery.",
-            fullDesc: "This training is designed for advanced security professionals. We will deep dive into advanced exploitation techniques, focus on code-reading methodologies, and go through real-world 0-day research projects. This is a 2-day training with an intensive hands-on part.",
+            fullDesc: "This training is designed for advanced security professionals. We will deep dive into advanced exploitation techniques, focus on code-reading methodologies, and go through real-world 0-day research projects. This is a 3-day training with an intensive hands-on part, including a final day entirely dedicated to AI-augmented 0-day research.",
             keyTakeaways: [
                 "Narrow focus on code-reading methodology",
                 "Web app & server instrumentation for bug detection",
                 "Practicing web 0-day research",
-                "Write detailed and clear bug reports"
+                "Write detailed and clear bug reports",
+                "AI-augmented variant analysis & 0-day hunting"
             ],
             prerequisites: [
                 "You enjoy reading code, and are familiar with at least 2/3 languages",
@@ -67,6 +75,12 @@ const Training = () => {
                 "Day 2": [
                     "Practice: Let's find some real 0-days now! 💣",
                     "Exploit development for the bugs found during the training"
+                ],
+                "Day 3 — AI": [
+                    "State of the art of AI-assisted vulnerability research",
+                    "Automating code audit & variant hunting with LLMs",
+                    "AI-driven fuzzing, triage and exploit scaffolding",
+                    "Hands-on: chase real 0-days with an AI copilot at your side 🤖"
                 ]
             }
         }
@@ -170,7 +184,7 @@ const Training = () => {
                                 <div className="flex items-start gap-4">
                                     <div className="text-3xl shrink-0">💰</div>
                                     <p className="text-gray-300 text-lg font-medium">
-                                        Usually <span className="text-white">500&euro;/day/attendee</span>, with a discount applied for <span className="text-[#c026d3]">&gt;6 attendees</span> or <span className="text-[#c026d3]">&gt;3 days</span> of training!
+                                        Usually <span className="text-white">600&euro;/day/attendee</span> over <span className="text-white">3 days</span> (the 3rd day is pure AI 🤖), with a discount applied for <span className="text-[#c026d3]">&gt;6 attendees</span> or <span className="text-[#c026d3]">&gt;3 days</span> of training!
                                     </p>
                                 </div>
                             </div>
@@ -249,27 +263,19 @@ const Training = () => {
                                     <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
                                         <Calendar className="text-[#c026d3]" /> Syllabus
                                     </h3>
-                                    <div className="grid md:grid-cols-2 gap-6">
-                                        <div className="bg-[#0f172a] p-6 rounded-xl border border-white/5">
-                                            <h4 className="font-bold text-lg text-white mb-4 border-b border-[#c026d3]/30 pb-2">Day 1</h4>
-                                            <ul className="space-y-3">
-                                                {selectedLevel.syllabus["Day 1"].map((topic, i) => (
-                                                    <li key={i} className="text-gray-300 text-sm flex gap-3">
-                                                        <span className="text-[#c026d3] font-bold">0{i + 1}.</span> {topic}
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                        <div className="bg-[#0f172a] p-6 rounded-xl border border-white/5">
-                                            <h4 className="font-bold text-lg text-white mb-4 border-b border-[#c026d3]/30 pb-2">Day 2</h4>
-                                            <ul className="space-y-3">
-                                                {selectedLevel.syllabus["Day 2"].map((topic, i) => (
-                                                    <li key={i} className="text-gray-300 text-sm flex gap-3">
-                                                        <span className="text-[#c026d3] font-bold">0{i + 1}.</span> {topic}
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div>
+                                    <div className="grid md:grid-cols-3 gap-6">
+                                        {Object.entries(selectedLevel.syllabus).map(([day, topics]) => (
+                                            <div key={day} className="bg-[#0f172a] p-6 rounded-xl border border-white/5">
+                                                <h4 className="font-bold text-lg text-white mb-4 border-b border-[#c026d3]/30 pb-2">{day}</h4>
+                                                <ul className="space-y-3">
+                                                    {topics.map((topic, i) => (
+                                                        <li key={i} className="text-gray-300 text-sm flex gap-3">
+                                                            <span className="text-[#c026d3] font-bold">0{i + 1}.</span> {topic}
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
                             </div>

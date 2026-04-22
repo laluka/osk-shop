@@ -20,8 +20,8 @@ const FAQ = () => {
                     answer: "I'm based in France (Lyon), but can be anywhere as long as the budget covers the travel & hosting! 😉 Trainings are usually 9am to 5pm CEST time, but can be tweaked on demand 🌻"
                 },
                 {
-                    question: "Why are trainings 2 days long \"only\"?",
-                    answer: "Trust me, we'll see quite a few tools and techniques, you'll need time to adopt them to the full! Practice makes a hacker. Guidance (mentoring/training) can help, but spend time on your own with your fresh skill set! 🌹"
+                    question: "Why are trainings 3 days long \"only\"?",
+                    answer: "Trust me, we'll see quite a few tools and techniques (including a full day dedicated to AI-assisted offensive workflows 🤖), you'll need time to adopt them to the full! Practice makes a hacker. Guidance (mentoring/training) can help, but spend time on your own with your fresh skill set! 🌹"
                 }
             ]
         },

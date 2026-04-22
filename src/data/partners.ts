@@ -5,7 +5,10 @@ export interface Partner {
 }
 
 export const customers: Partner[] = [
+    { name: 'Bodic', url: 'https://bodic.fr/', img: '/assets/trusted-customers/bodic.png' },
+    { name: 'Bots & Company', url: 'https://www.botsandcompany.com/', img: '/assets/trusted-customers/bots-and-company.png' },
     { name: 'BuyCo', url: 'https://buyco.co/', img: '/assets/trusted-customers/buyco.png' },
+    { name: 'Cultura', url: 'https://www.cultura.com/', img: '/assets/trusted-customers/cultura.png' },
     { name: 'Ector', url: 'https://www.ectorparking.com/', img: '/assets/trusted-customers/ector.png' },
     { name: 'ESNA', url: 'https://esna.bzh/', img: '/assets/trusted-customers/esna.jpg' },
     { name: 'Espace des Marques', url: 'https://www.espace-des-marques.com/', img: '/assets/trusted-customers/espace-des-marques.png' },
@@ -18,8 +21,10 @@ export const customers: Partner[] = [
     { name: 'RGoods', url: 'https://rgoods.com/', img: '/assets/trusted-customers/rgoods.png' },
     { name: 'Root-Me Pro', url: 'https://pro.root-me.org/', img: '/assets/trusted-customers/root-me-pro.jpg' },
     { name: 'RTE', url: 'https://www.rte-france.com/', img: '/assets/trusted-customers/rte.jpg' },
+    { name: 'Shine', url: 'https://www.shine.fr/', img: '/assets/trusted-customers/shine.png' },
     { name: 'Stackered', url: 'https://stackered.com/', img: '/assets/trusted-customers/stackered.jpg' },
-    { name: 'Wealthcome', url: 'https://wealthcome.fr/', img: '/assets/trusted-customers/wealthcome.png' }
+    { name: 'Wealthcome', url: 'https://wealthcome.fr/', img: '/assets/trusted-customers/wealthcome.png' },
+    { name: 'Wedrivit', url: 'https://www.wedrivit.com/', img: '/assets/trusted-customers/wedrivit.png' }
 ];
 
 export const partners: Partner[] = [
