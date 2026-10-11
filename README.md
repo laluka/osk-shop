@@ -54,7 +54,6 @@ osk-shop/
 - **TypeScript**
 - **Vite**
 - **Tailwind CSS**
-- **Framer Motion**
 - **Lucide React**
 
 ##  License

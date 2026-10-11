@@ -7,9 +7,9 @@ const DIST_DIR = path.join(__dirname, '../dist');
 const BASE_URL = 'https://laluka.github.io/osk-shop/';
 
 const routes = [
-  { path: 'pentest', name: 'pentest', title: 'OffenSkill | Pentest & Audits', desc: 'Expert security assessments for your applications and infrastructure.' },
-  { path: 'training', name: 'training', title: 'OffenSkill | Training Programs', desc: 'Master offensive security from rookie to expert levels.' },
-  { path: 'mentoring', name: 'mentoring', title: 'OffenSkill | Mentoring', desc: 'Personalized guidance to accelerate your cybersecurity career.' },
+  { path: 'pentest', name: 'pentest', title: 'OffenSkill | Pentest & Audits', desc: 'Security assessments for web, cloud, Linux, Hardware & IoT, OSINT, and Reverse Engineering.' },
+  { path: 'training', name: 'training', title: 'OffenSkill | Training Programs', desc: 'Hands-on expert training in code audits, 0-day research, and AI-assisted offensive security.' },
+  { path: 'mentoring', name: 'mentoring', title: 'OffenSkill | Mentoring', desc: 'Personalized cybersecurity guidance from our team of four independent collaborators.' },
   { path: 'faq', name: 'faq', title: 'OffenSkill | Q&A', desc: 'Frequently asked questions about our services and methodology.' }
 ];
 

@@ -5,6 +5,10 @@ export default {
         "./src/**/*.{js,ts,jsx,tsx}",
     ],
     theme: {
+        container: {
+            center: true,
+            screens: { sm: '640px', md: '768px', lg: '1024px', xl: '1152px', '2xl': '1152px' },
+        },
         extend: {
             colors: {
                 primary: '#78174d',
@@ -15,7 +19,7 @@ export default {
                 'text-muted': '#94a3b8',
             },
             fontFamily: {
-                heading: ['Outfit', 'sans-serif'],
+                heading: ['Inter', 'sans-serif'],
                 body: ['Inter', 'sans-serif'],
             },
         },

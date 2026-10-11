@@ -5,10 +5,12 @@ export interface Partner {
 }
 
 export const customers: Partner[] = [
+    { name: 'Armen', url: 'https://armen.eu/', img: '/assets/trusted-customers/armen.svg' },
     { name: 'Bodic', url: 'https://bodic.fr/', img: '/assets/trusted-customers/bodic.png' },
     { name: 'Bots & Company', url: 'https://www.botsandcompany.com/', img: '/assets/trusted-customers/bots-and-company.png' },
     { name: 'BuyCo', url: 'https://buyco.co/', img: '/assets/trusted-customers/buyco.png' },
     { name: 'Cultura', url: 'https://www.cultura.com/', img: '/assets/trusted-customers/cultura.png' },
+    { name: 'DEEMPLY', url: 'https://www.deemply.com/', img: '/assets/trusted-customers/deemply.svg' },
     { name: 'Ector', url: 'https://www.ectorparking.com/', img: '/assets/trusted-customers/ector.png' },
     { name: 'ESNA', url: 'https://esna.bzh/', img: '/assets/trusted-customers/esna.jpg' },
     { name: 'Espace des Marques', url: 'https://www.espace-des-marques.com/', img: '/assets/trusted-customers/espace-des-marques.png' },
@@ -17,12 +19,14 @@ export const customers: Partner[] = [
     { name: 'I-Tracing', url: 'https://i-tracing.com/', img: '/assets/trusted-customers/itracing.png' },
     { name: 'ManoMano', url: 'https://www.manomano.fr/', img: '/assets/trusted-customers/manomano.jpg' },
     { name: 'Mineural', url: 'https://www.mineural.ca/', img: '/assets/trusted-customers/mineural.png' },
+    { name: 'NEAT', url: 'https://www.neat.eu/', img: '/assets/trusted-customers/neat.svg' },
     { name: 'Oteria', url: 'https://www.oteria.fr/', img: '/assets/trusted-customers/oteria.jpg' },
     { name: 'RGoods', url: 'https://rgoods.com/', img: '/assets/trusted-customers/rgoods.png' },
     { name: 'Root-Me Pro', url: 'https://pro.root-me.org/', img: '/assets/trusted-customers/root-me-pro.jpg' },
     { name: 'RTE', url: 'https://www.rte-france.com/', img: '/assets/trusted-customers/rte.jpg' },
     { name: 'Shine', url: 'https://www.shine.fr/', img: '/assets/trusted-customers/shine.png' },
     { name: 'Stackered', url: 'https://stackered.com/', img: '/assets/trusted-customers/stackered.jpg' },
+    { name: 'Traefik Labs', url: 'https://traefik.io/', img: '/assets/trusted-customers/traefik-labs.svg' },
     { name: 'Wealthcome', url: 'https://wealthcome.fr/', img: '/assets/trusted-customers/wealthcome.png' },
     { name: 'Wedrivit', url: 'https://www.wedrivit.com/', img: '/assets/trusted-customers/wedrivit.png' }
 ];
@@ -39,5 +43,3 @@ export const partners: Partner[] = [
     { name: 'NetFreed', url: 'https://netfreed.com/', img: '/assets/trusted-partners/netfreed.jpg' },
     { name: 'TechItSimple', url: 'https://techitsimple.com/', img: '/assets/trusted-partners/techitsimple.jpg' }
 ];
-
-export const allPartners = [...customers, ...partners];

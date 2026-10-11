@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -11,7 +11,7 @@
   --color-bg-light: #1e293b;
   --color-text: #f8fafc;
   --color-text-muted: #94a3b8;
-  --font-heading: 'Outfit', sans-serif;
+  --font-heading: 'Inter', sans-serif;
   --font-body: 'Inter', sans-serif;
   --radius-md: 0.5rem;
   --radius-lg: 1rem;
@@ -35,11 +35,15 @@
 
 @layer components {
   .btn {
-    @apply inline-flex items-center justify-center px-6 py-3 bg-primary text-white rounded-full font-bold transition-all duration-300 border-2 border-transparent font-heading hover:bg-primary-hover hover:-translate-y-0.5 hover:shadow-lg;
+    @apply inline-flex items-center justify-center px-5 py-2.5 bg-primary text-white rounded-sm font-medium text-sm transition-colors border border-transparent hover:bg-primary-hover;
   }
 
   .btn-outline {
-    @apply bg-transparent border-primary text-primary hover:bg-primary hover:text-white;
+    @apply bg-transparent border-white/20 text-gray-200 hover:bg-white/5 hover:border-white/40;
+  }
+
+  :focus-visible {
+    @apply outline outline-2 outline-offset-4 outline-[#c026d3];
   }
 }
 

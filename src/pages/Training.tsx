@@ -1,288 +1,122 @@
-import { useState } from 'react';
-import AnimatedSection from '../components/AnimatedSection';
-import { Terminal, Cpu, X, CheckCircle, Calendar, BookOpen } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useRef } from 'react';
+import { X } from 'lucide-react';
+import PageIntro from '../components/PageIntro';
+
+const training = {
+    title: 'Expert',
+    description: 'Three days of code audits, exploitation, and real-world 0-day research. The final day focuses on AI-assisted offensive workflows.',
+    takeaways: [
+        'Code-reading methodology',
+        'Web application and server instrumentation',
+        'Practical web 0-day research and exploit development',
+        'Clear vulnerability reports',
+        'AI-assisted variant analysis and vulnerability research',
+    ],
+    prerequisites: [
+        'Comfortable reading code in multiple languages',
+        'Familiar with XSS, XXE, SSRF, SQL injection, RCE, file access bugs, and deserialization',
+        'Able to write scripts in Python or an equivalent language',
+    ],
+    syllabus: {
+        'Day 1': [
+            'Code audit techniques and tooling',
+            'Fuzzing and introspection',
+            'Set up web application labs and investigate potential findings',
+        ],
+        'Day 2': [
+            'Research real 0-days',
+            'Develop exploits for vulnerabilities found during the training',
+        ],
+        'Day 3 — AI': [
+            'AI-assisted vulnerability research',
+            'Automate code audits and variant analysis with LLMs',
+            'AI-assisted fuzzing, triage, and exploit development',
+            'Hands-on 0-day research with an AI assistant',
+        ],
+    },
+};
 
 const Training = () => {
-    const [selectedLevel, setSelectedLevel] = useState<null | typeof levels[0]>(null);
-
-    const levels = [
-        {
-            level: "Level 10",
-            title: "Rookie",
-            icon: Terminal,
-            color: "blue",
-            desc: "The foundation. Understand the basics of offensive security.",
-            fullDesc: "This training is designed for people who want to start their journey into the offensive world. We will cover the basics of web security, offensive tooling, and how to structure your recon process. This is a 3-day training with a lot of practice, capped off with a full day dedicated to AI-assisted offensive workflows.",
-            keyTakeaways: [
-                "Get familiar with linux command line & efficiency tooling",
-                "Get to know BurpSuite, Chrome Dev Tools, ffuf, and more!",
-                "Spend time practicing & exploiting on OWASP top 10 bugs",
-                "Leverage AI assistants to supercharge recon and exploitation"
-            ],
-            prerequisites: [
-                "Basic knowledge of Linux & Command Line (ls, cd, curl, man)",
-                "Know your browser, have already used the inspection features",
-                "Be able to use your brain, google, and LLMs like GPT / Mistral"
-            ],
-            syllabus: {
-                "Day 1": [
-                    "Intro to Offensive Tooling",
-                    "Intro to OWASP top 10",
-                    "Warm Up with Frontend & Backend bugs to exploit"
-                ],
-                "Day 2": [
-                    "Full Exploit Chain analysis",
-                    "How to structure your recon process",
-                    "Exploiting a production-like application to the full",
-                    "Opening on linux privilege escalations techniques"
-                ],
-                "Day 3 — AI": [
-                    "Prompt engineering fundamentals for offensive use",
-                    "AI-assisted recon, fuzzing and payload crafting",
-                    "Using LLMs to read code and spot vulnerable patterns",
-                    "Hands-on: solve challenges paired with an AI copilot"
-                ]
-            }
-        },
-        {
-            level: "Level 30",
-            title: "Expert",
-            icon: Cpu,
-            color: "orange",
-            desc: "Cutting edge. Research and 0-day discovery.",
-            fullDesc: "This training is designed for advanced security professionals. We will deep dive into advanced exploitation techniques, focus on code-reading methodologies, and go through real-world 0-day research projects. This is a 3-day training with an intensive hands-on part, including a final day entirely dedicated to AI-augmented 0-day research.",
-            keyTakeaways: [
-                "Narrow focus on code-reading methodology",
-                "Web app & server instrumentation for bug detection",
-                "Practicing web 0-day research",
-                "Write detailed and clear bug reports",
-                "AI-augmented variant analysis & 0-day hunting"
-            ],
-            prerequisites: [
-                "You enjoy reading code, and are familiar with at least 2/3 languages",
-                "Be fluent with XSS, XXE, SSRF, SQLI, RCE, File read/write, unserialize",
-                "Scripting capabilities (python or equivalent)",
-                "This training requires a sharp mind, and coffee! ☕"
-            ],
-            syllabus: {
-                "Day 1": [
-                    "Deep Dive on Code Audit Techniques",
-                    "Deep Dive on Code Audit Tooling",
-                    "Deep Dive on Fuzzing & Introspection Tooling",
-                    "Web-App labs setup & brainstorm on potential findings"
-                ],
-                "Day 2": [
-                    "Practice: Let's find some real 0-days now! 💣",
-                    "Exploit development for the bugs found during the training"
-                ],
-                "Day 3 — AI": [
-                    "State of the art of AI-assisted vulnerability research",
-                    "Automating code audit & variant hunting with LLMs",
-                    "AI-driven fuzzing, triage and exploit scaffolding",
-                    "Hands-on: chase real 0-days with an AI copilot at your side 🤖"
-                ]
-            }
-        }
-    ];
+    const syllabusRef = useRef<HTMLDialogElement>(null);
 
     return (
-        <div className="pb-20 relative">
-            <div className="relative h-[35vh] flex items-center justify-center overflow-hidden mb-12">
-                <img
-                    src={`${import.meta.env.BASE_URL}assets/original/trainings-thumb.jpg`}
-                    alt="Training Service"
-                    className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-overlay"
-                />
-                <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a]/20 via-[#0f172a]/60 to-[#0f172a]" />
-
-                <AnimatedSection className="relative z-10 text-center px-4">
-                    <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6">
-                        Training <span className="text-[#c026d3]">Programs</span>
-                    </h1>
-                    <p className="text-xl text-gray-200 max-w-2xl mx-auto font-medium">
-                        Level up your skills with our hands-on cybersecurity training paths. From basics to advanced research.
-                    </p>
-                </AnimatedSection>
-            </div>
-
+        <div className="pb-16">
+            <PageIntro
+                title="Expert Training"
+                description="Hands-on offensive security training for experienced researchers and security teams."
+            />
             <div className="container mx-auto px-4">
-                <div className="grid md:grid-cols-2 gap-8 mx-auto mb-12">
-                    {levels.map((item, i) => (
-                        <AnimatedSection key={i} className="h-full">
-                            <div
-                                onClick={() => setSelectedLevel(item)}
-                                className="bg-[#1e293b] rounded-2xl p-8 h-full border border-white/5 hover:border-[#c026d3]/50 transition-all hover:-translate-y-2 flex flex-col relative overflow-hidden group cursor-pointer"
-                            >
-                                <div className={`absolute top-0 right-0 w-40 h-40 bg-${item.color}-500/10 rounded-full blur-3xl -mr-20 -mt-20 group-hover:bg-${item.color}-500/20 transition-all`} />
-
-                                <div className="flex items-center gap-5 mb-8 relative z-10">
-                                    <div className="p-4 rounded-xl bg-[#0f172a] text-[#c026d3] shrink-0">
-                                        <item.icon className="w-8 h-8" />
-                                    </div>
-                                    <div className="flex-grow">
-                                        <span className="text-sm font-bold tracking-wider text-[#c026d3] uppercase mb-0.5 block">
-                                            {item.level}
-                                        </span>
-                                        <h2 className="text-2xl font-bold font-heading leading-tight">{item.title}</h2>
-                                    </div>
-
-                                    {/* Badges */}
-                                    {item.level === "Level 10" && (
-                                        <img src={`${import.meta.env.BASE_URL}assets/original/training-badge-rookie.png`} alt="Rookie Badge" className="w-16 h-16 opacity-90 drop-shadow-[0_0_15px_rgba(37,99,235,0.4)]" />
-                                    )}
-                                    {item.level === "Level 30" && (
-                                        <img src={`${import.meta.env.BASE_URL}assets/original/training-badge-expert.png`} alt="Expert Badge" className="w-16 h-16 opacity-90 drop-shadow-[0_0_15px_rgba(249,115,22,0.4)]" />
-                                    )}
-                                </div>
-
-                                <p className="text-gray-400 mb-8 max-w-[85%]">{item.desc}</p>
-
-                                <div className="mt-auto">
-                                    <h3 className="text-sm font-semibold text-white mb-4 uppercase tracking-wider">Key Takeaways</h3>
-                                    <ul className="space-y-3">
-                                        {item.keyTakeaways.slice(0, 3).map((topic, j) => (
-                                            <li key={j} className="flex items-center gap-2 text-gray-300 text-sm">
-                                                <span className="w-1.5 h-1.5 bg-[#c026d3] rounded-full" />
-                                                {topic}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                    <p className="text-[#c026d3] text-sm mt-4 font-bold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                                        Click for details & syllabus →
-                                    </p>
-                                </div>
-                            </div>
-                        </AnimatedSection>
-                    ))}
-                </div>
-
-                <AnimatedSection className="max-w-4xl mx-auto pb-20">
-                    <div className="bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 p-8 md:p-12 shadow-2xl relative overflow-hidden group">
-                        {/* Decorative background accent */}
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-[#c026d3]/10 rounded-full blur-3xl -mr-32 -mt-32" />
-
-                        <div className="relative z-10 text-center space-y-8">
-                            <div>
-                                <h2 className="text-2xl md:text-3xl font-bold mb-4">
-                                    Upcoming trainings are <span className="text-[#c026d3] font-mono">onDemand()</span>
-                                </h2>
-                                <p className="text-lg text-gray-300">
-                                    Groups can be free-formed or already constituted, starting at <span className="text-white font-bold">&ge;2 students</span>
-                                </p>
-                            </div>
-
-                            <div className="flex flex-col gap-8 text-left max-w-2xl mx-auto">
-                                <div className="flex items-start gap-4">
-                                    <div className="text-3xl shrink-0">🛠️</div>
-                                    <p className="text-gray-300 text-lg">The content is always tweaked for the attendees needs</p>
-                                </div>
-                                <div className="flex items-start gap-4">
-                                    <div className="text-3xl shrink-0">📅</div>
-                                    <p className="text-gray-300 text-lg">The date is always chosen as a common agreement with every participants</p>
-                                </div>
-                                <div className="flex items-start gap-4">
-                                    <div className="text-3xl shrink-0">💰</div>
-                                    <p className="text-gray-300 text-lg font-medium">
-                                        Usually <span className="text-white">600&euro;/day/attendee</span> over <span className="text-white">3 days</span> (the 3rd day is pure AI 🤖), with a discount applied for <span className="text-[#c026d3]">&gt;6 attendees</span> or <span className="text-[#c026d3]">&gt;3 days</span> of training!
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className="pt-8 border-t border-white/5">
-                                <p className="text-lg text-gray-300">
-                                    Ready to level up? Join one of our public sessions or <a href="https://linktr.ee/TheLaluka" target="_blank" rel="noopener noreferrer" className="text-[#c026d3] font-bold hover:underline">reach out</a> via the links in the footer to book a private training for your team! 👇
-                                </p>
-                            </div>
+                <article className="border-y border-white/10 py-7 mb-10">
+                    <div className="flex items-center gap-4 mb-4">
+                        <img src={`${import.meta.env.BASE_URL}assets/original/training-badge-expert.png`} alt="Expert training badge" className="w-12 h-12 object-contain" />
+                        <div>
+                            <p className="text-xs text-gray-400 mb-1">Level 30 · 3 days</p>
+                            <h2 className="text-2xl font-semibold">{training.title}</h2>
                         </div>
                     </div>
-                </AnimatedSection>
+                    <p className="text-gray-300 max-w-3xl mb-5">{training.description}</p>
+                    <ul className="list-disc pl-5 space-y-2 text-sm text-gray-300">
+                        {training.takeaways.map((topic) => <li key={topic}>{topic}</li>)}
+                    </ul>
+                    <button type="button" onClick={() => syllabusRef.current?.showModal()} className="btn btn-outline mt-6">
+                        View details & syllabus
+                    </button>
+                </article>
+
+                <section>
+                    <h2 className="text-xl font-semibold mb-5">Arrange a Training</h2>
+                    <dl className="space-y-5 max-w-3xl text-sm">
+                        <div className="grid sm:grid-cols-[8rem_1fr] gap-1 sm:gap-4">
+                            <dt className="font-semibold">Groups</dt>
+                            <dd className="text-gray-300">From 2 attendees, either an existing team or a group formed for the session.</dd>
+                        </div>
+                        <div className="grid sm:grid-cols-[8rem_1fr] gap-1 sm:gap-4">
+                            <dt className="font-semibold">Content & Dates</dt>
+                            <dd className="text-gray-300">Content is adapted to the attendees. We agree on dates together.</dd>
+                        </div>
+                        <div className="grid sm:grid-cols-[8rem_1fr] gap-1 sm:gap-4">
+                            <dt className="font-semibold">Pricing</dt>
+                            <dd className="text-gray-300">Usually 600€/day/attendee over 3 days, including the AI day. Discounts apply for more than 6 attendees or more than 3 days of training.</dd>
+                        </div>
+                    </dl>
+                    <a href="mailto:loukajc+shop@offenskill.com?subject=Expert%20training" className="btn mt-7">Ask about training</a>
+                </section>
             </div>
 
-            {/* Modal */}
-            <AnimatePresence>
-                {selectedLevel && (
-                    <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            onClick={() => setSelectedLevel(null)}
-                            className="absolute inset-0 bg-black/80 backdrop-blur-sm"
-                        />
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                            animate={{ opacity: 1, scale: 1, y: 0 }}
-                            exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                            className="bg-[#1e293b] w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl border border-white/10 relative shadow-2xl z-10"
-                        >
-                            <button
-                                onClick={() => setSelectedLevel(null)}
-                                className="absolute top-4 right-4 p-2 hover:bg-white/10 rounded-full transition-colors z-20"
-                            >
-                                <X className="w-6 h-6" />
-                            </button>
-
-                            <div className="p-8 md:p-12">
-                                <span className="text-[#c026d3] font-bold tracking-wider uppercase text-sm mb-2 block">{selectedLevel.level}</span>
-                                <h2 className="text-4xl font-heading font-bold mb-6">{selectedLevel.title} Training</h2>
-                                <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                                    {selectedLevel.fullDesc}
-                                </p>
-
-                                <div className="grid md:grid-cols-2 gap-12 mb-12">
-                                    <div>
-                                        <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                                            <CheckCircle className="text-[#c026d3]" /> Prerequisites
-                                        </h3>
-                                        <ul className="space-y-3">
-                                            {selectedLevel.prerequisites.map((req, i) => (
-                                                <li key={i} className="flex items-start gap-3 text-gray-300">
-                                                    <span className="w-1.5 h-1.5 bg-[#c026d3] rounded-full mt-2" />
-                                                    {req}
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                    <div>
-                                        <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                                            <BookOpen className="text-[#c026d3]" /> Key Takeaways
-                                        </h3>
-                                        <ul className="space-y-3">
-                                            {selectedLevel.keyTakeaways.map((item, i) => (
-                                                <li key={i} className="flex items-start gap-3 text-gray-300">
-                                                    <span className="w-1.5 h-1.5 bg-[#c026d3] rounded-full mt-2" />
-                                                    {item}
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                                        <Calendar className="text-[#c026d3]" /> Syllabus
-                                    </h3>
-                                    <div className="grid md:grid-cols-3 gap-6">
-                                        {Object.entries(selectedLevel.syllabus).map(([day, topics]) => (
-                                            <div key={day} className="bg-[#0f172a] p-6 rounded-xl border border-white/5">
-                                                <h4 className="font-bold text-lg text-white mb-4 border-b border-[#c026d3]/30 pb-2">{day}</h4>
-                                                <ul className="space-y-3">
-                                                    {topics.map((topic, i) => (
-                                                        <li key={i} className="text-gray-300 text-sm flex gap-3">
-                                                            <span className="text-[#c026d3] font-bold">0{i + 1}.</span> {topic}
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
-                        </motion.div>
+            <dialog
+                ref={syllabusRef}
+                aria-labelledby="training-syllabus-title"
+                className="bg-bg text-text max-w-4xl max-h-[85vh] p-0 border border-white/20 rounded-sm backdrop:bg-black/70"
+                style={{ width: 'calc(100% - 2rem)' }}
+                onClick={(event) => {
+                    if (event.target === event.currentTarget) syllabusRef.current?.close();
+                }}
+            >
+                <div className="p-6 sm:p-8">
+                    <div className="flex items-start justify-between gap-4 mb-5">
+                        <h2 id="training-syllabus-title" className="text-2xl font-semibold">Expert Training</h2>
+                        <button type="button" onClick={() => syllabusRef.current?.close()} aria-label="Close syllabus" className="p-2 hover:bg-white/5 rounded-sm">
+                            <X className="w-5 h-5" />
+                        </button>
                     </div>
-                )}
-            </AnimatePresence>
+                    <p className="text-gray-300 mb-7">{training.description}</p>
+                    <h3 className="font-semibold mb-3">Prerequisites</h3>
+                    <ul className="list-disc pl-5 space-y-2 text-sm text-gray-300 mb-8">
+                        {training.prerequisites.map((item) => <li key={item}>{item}</li>)}
+                    </ul>
+                    <h3 className="font-semibold mb-4">Syllabus</h3>
+                    <div className="grid md:grid-cols-3 gap-6">
+                        {Object.entries(training.syllabus).map(([day, topics]) => (
+                            <section key={day} className="border-t border-white/10 pt-4">
+                                <h4 className="font-semibold mb-3">{day}</h4>
+                                <ul className="list-disc pl-5 space-y-2 text-sm text-gray-300">
+                                    {topics.map((topic) => <li key={topic}>{topic}</li>)}
+                                </ul>
+                            </section>
+                        ))}
+                    </div>
+                </div>
+            </dialog>
         </div>
     );
 };

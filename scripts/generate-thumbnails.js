@@ -6,7 +6,7 @@ import fs from 'fs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PORT = 5176;
-const BASE_URL = `http://localhost:${PORT}/osk-shop/`;
+const BASE_URL = `http://localhost:${PORT}/`;
 const OUTPUT_DIR = path.join(__dirname, '../public/assets/thumbnails');
 
 const routes = [
@@ -54,8 +54,7 @@ async function generateThumbnails() {
             // Wait for the app to actually render something inside #root
             await page.waitForSelector('#root > *', { timeout: 10000 });
 
-            // Wait a bit more for animations (framer motion) to finish
-            await page.waitForTimeout(3000);
+            await page.evaluate(() => document.fonts.ready);
 
             await page.screenshot({
                 path: path.join(OUTPUT_DIR, `${route.name}.png`),

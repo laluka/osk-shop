@@ -1,11 +1,10 @@
-import AnimatedSection from '../components/AnimatedSection';
 import ServiceCard from '../components/ServiceCard';
+import TeamProfiles from '../components/TeamProfiles';
+import LogoGrid from '../components/LogoGrid';
 import { customers, partners } from '../data/partners';
-import { Shield, GraduationCap, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useMemo } from 'react';
 
-// Fisher-Yates shuffle algorithm
 const shuffleArray = <T,>(array: T[]): T[] => {
     const shuffled = [...array];
     for (let i = shuffled.length - 1; i > 0; i--) {
@@ -16,170 +15,61 @@ const shuffleArray = <T,>(array: T[]): T[] => {
 };
 
 const Home = () => {
-    // Shuffle arrays on each component mount (page load)
     const shuffledCustomers = useMemo(() => shuffleArray(customers), []);
     const shuffledPartners = useMemo(() => shuffleArray(partners), []);
+
     return (
-        <div className="flex flex-col gap-12 pb-12">
-            {/* Hero Section */}
-            <section className="relative pt-24 pb-12 px-4 overflow-hidden min-h-[40vh] flex items-center">
-                {/* Background Image */}
-                <div className="absolute inset-0 z-0">
-                    <img
-                        src={`${import.meta.env.BASE_URL}assets/original/hero-bg.jpg`}
-                        alt="Cybersecurity Background"
-                        className="w-full h-full object-cover opacity-40 mix-blend-overlay"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#0f172a]/80 to-[#0f172a]" />
-                </div>
-
-                <div className="container mx-auto text-center z-10 relative">
-                    <AnimatedSection>
-                        <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 tracking-tight drop-shadow-2xl">
-                            Ethical Hacking <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c026d3] to-[#c026d3]">@ OffenSkill</span>
-                        </h1>
-                        <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed">
-                            Welcome to OffenSkill, where we deliver cybersecurity trainings, mentoring, code audits, and pentests!
-                        </p>
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                            <Link to="/pentest" className="btn text-lg px-8 py-3 w-full sm:w-auto shadow-[0_0_20px_rgba(192,38,211,0.5)] hover:shadow-[0_0_30px_rgba(192,38,211,0.8)]">
-                                Get Secured
-                            </Link>
-                            <Link to="/training" className="btn btn-outline text-lg px-8 py-3 w-full sm:w-auto backdrop-blur-sm bg-black/20 hover:bg-[#c026d3] border-[#c026d3] text-[#f0abfc] hover:text-white">
-                                See Trainings
-                            </Link>
-                        </div>
-                    </AnimatedSection>
+        <div className="container mx-auto px-4 pb-16">
+            <section className="pt-14 pb-12 md:pt-20 md:pb-16">
+                <h1 className="text-4xl md:text-5xl font-semibold tracking-tight max-w-3xl mb-5">
+                    Ethical hacking at <span className="text-[#c026d3]">OffenSkill</span>
+                </h1>
+                <p className="text-lg text-gray-300 max-w-2xl mb-7">
+                    Pentests, code audits, expert training, and mentoring.
+                    Four independent researchers working with your team.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                    <Link to="/pentest" className="btn">Discuss an audit</Link>
+                    <Link to="/training" className="btn btn-outline">View training</Link>
                 </div>
             </section>
 
-            {/* Services Grid */}
-            <section className="container mx-auto px-4">
-                <AnimatedSection className="grid md:grid-cols-3 gap-6">
-                    <ServiceCard
-                        title="Pentest & Audits"
-                        description="Comprehensive security assessments for Web, Cloud, and Linux environments. Find vulnerabilities before they do."
-                        icon={Shield}
-                        link="/pentest"
-                        image="/assets/original/pentests-thumb.jpg"
-                        delay={0}
-                    />
-                    <ServiceCard
-                        title="Training"
-                        description="From rookie to expert. Master the art of offensive security with our per-level courses."
-                        icon={GraduationCap}
-                        link="/training"
-                        image="/assets/original/trainings-thumb.jpg"
-                        delay={100}
-                    />
-                    <ServiceCard
-                        title="Mentoring"
-                        description="Personalized guidance to accelerate your career, solve technical blockers, or build your roadmap."
-                        icon={Users}
-                        link="/mentoring"
-                        image="/assets/original/mentoring-thumb.jpg"
-                        delay={200}
-                    />
-                </AnimatedSection>
-            </section>
-            {/* About Me Section */}
-            <section className="container mx-auto px-4 mt-20">
-                <AnimatedSection>
-                    <div className="bg-white/5 backdrop-blur-md rounded-[2.5rem] border border-white/10 overflow-hidden shadow-2xl">
-                        <div className="flex flex-col md:flex-row items-center">
-                            {/* Profile Image */}
-                            <div className="w-full md:w-1/3 p-8 lg:p-12">
-                                <div className="relative group">
-                                    <div className="absolute -inset-2 bg-gradient-to-r from-[#c026d3] to-[#78174d] rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-500" />
-                                    <img
-                                        src={`${import.meta.env.BASE_URL}assets/original/louka-laluka.png`}
-                                        alt="Louka Jacques-Chevallier"
-                                        className="relative rounded-xl w-full aspect-square object-cover shadow-2xl"
-                                    />
-                                </div>
-                            </div>
-
-                            {/* Bio Text */}
-                            <div className="w-full md:w-2/3 p-8 lg:p-12 md:pl-0">
-                                <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6 text-white">
-                                    About <span className="text-[#c026d3]">me</span>
-                                </h2>
-                                <div className="space-y-6 text-lg md:text-xl text-gray-300 leading-relaxed">
-                                    <p className="font-bold text-white">
-                                        I go by Laluka online & Louka Jacques-Chevallier IRL
-                                    </p>
-                                    <p>
-                                        I’ve been part of the Offensive Security Field since 2019, mostly consulting, pentesting, red-teaming, blue-tooling, and mentoring.
-                                        I've been giving talks for a while now, but always felt that unidirectional relations were not the best fit for teaching...
-                                    </p>
-                                    <p className="text-white font-medium italic">
-                                        Therefore going toward something more human: Teaching & Mentoring! 💌
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </AnimatedSection>
+            <section aria-label="Services" className="grid md:grid-cols-3 gap-x-8 mb-12">
+                <ServiceCard
+                    title="Pentest & Audits"
+                    description="Web, Cloud, Linux, Hardware & IoT, OSINT, and Reverse Engineering."
+                    link="/pentest"
+                />
+                <ServiceCard
+                    title="Training"
+                    description="Code audits, 0-day research, and AI-assisted offensive security."
+                    link="/training"
+                />
+                <ServiceCard
+                    title="Mentoring"
+                    description="Work through a technical blocker, review your tooling, or plan what to learn next."
+                    link="/mentoring"
+                />
             </section>
 
-            {/* Happy Customers */}
-            <section className="container mx-auto px-4 mt-20">
-                <AnimatedSection>
-                    <h2 className="text-3xl md:text-5xl font-heading font-bold mb-12 text-center text-white">
-                        <span className="text-[#c026d3]">Happy</span> Customers
-                    </h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 justify-items-center">
-                        {shuffledCustomers.map((customer) => (
-                            <div
-                                key={customer.url}
-                                className="w-full max-w-[280px] h-40 flex items-center justify-center p-6 bg-white/5 backdrop-blur-sm rounded-3xl border border-white/10 hover:border-[#c026d3]/40 transition-all duration-300 group"
-                            >
-                                <a
-                                    href={customer.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="w-full h-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:rotate-2"
-                                >
-                                    <img
-                                        src={customer.img.startsWith('/') ? `${import.meta.env.BASE_URL}${customer.img.slice(1)}` : customer.img}
-                                        alt={customer.name}
-                                        className="max-h-28 max-w-full object-contain"
-                                    />
-                                </a>
-                            </div>
-                        ))}
-                    </div>
-                </AnimatedSection>
+            <section className="mb-14">
+                <h2 className="text-2xl font-semibold mb-4">About Us</h2>
+                <p className="text-gray-300 max-w-3xl mb-7">
+                    We're four independent collaborators working as peers. We combine our skills in offensive security
+                    with Hardware & IoT, OSINT, and Reverse Engineering. We aim to work in pairs and stay close to your team,
+                    sharing what we find and how to fix it.
+                </p>
+                <TeamProfiles />
             </section>
 
-            {/* Trusted Partners */}
-            <section className="container mx-auto px-4 mt-20">
-                <AnimatedSection>
-                    <h2 className="text-3xl md:text-5xl font-heading font-bold mb-12 text-center text-white">
-                        Trusted <span className="text-[#c026d3]">Partners</span>
-                    </h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 justify-items-center">
-                        {shuffledPartners.map((partner) => (
-                            <div
-                                key={partner.url}
-                                className="w-full max-w-[280px] h-40 flex items-center justify-center p-6 bg-white/5 backdrop-blur-sm rounded-3xl border border-white/10 hover:border-[#c026d3]/40 transition-all duration-300 group"
-                            >
-                                <a
-                                    href={partner.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="w-full h-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:rotate-2"
-                                >
-                                    <img
-                                        src={partner.img.startsWith('/') ? `${import.meta.env.BASE_URL}${partner.img.slice(1)}` : partner.img}
-                                        alt={partner.name}
-                                        className="max-h-28 max-w-full object-contain"
-                                    />
-                                </a>
-                            </div>
-                        ))}
-                    </div>
-                </AnimatedSection>
+            <section className="mb-12">
+                <h2 className="text-2xl font-semibold mb-6">Customers</h2>
+                <LogoGrid items={shuffledCustomers} />
+            </section>
+
+            <section>
+                <h2 className="text-2xl font-semibold mb-6">Trusted Partners</h2>
+                <LogoGrid items={shuffledPartners} />
             </section>
         </div>
     );
