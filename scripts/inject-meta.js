@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIST_DIR = path.join(__dirname, '../dist');
-const BASE_URL = 'https://laluka.github.io/osk-shop/';
+const BASE_URL = 'https://offenskill.com/';
 
 const routes = [
   { path: 'pentest', name: 'pentest', title: 'OffenSkill | Pentest & Audits', desc: 'Security assessments for web, cloud, Linux, Hardware & IoT, OSINT, and Reverse Engineering.' },
@@ -40,9 +40,11 @@ async function injectMeta() {
 
     // Replace OG Title
     newHtml = newHtml.replace(/property="og:title"\s+content=".*?"/s, `property="og:title" content="${route.title}"`);
+    newHtml = newHtml.replace(/property="twitter:title"\s+content=".*?"/s, `property="twitter:title" content="${route.title}"`);
 
     // Replace OG Description
     newHtml = newHtml.replace(/property="og:description"\s+content=".*?"/s, `property="og:description" content="${route.desc}"`);
+    newHtml = newHtml.replace(/property="twitter:description"\s+content=".*?"/s, `property="twitter:description" content="${route.desc}"`);
 
     // Replace OG Image
     const thumbUrl = `${BASE_URL}assets/thumbnails/${route.name}.png`;
