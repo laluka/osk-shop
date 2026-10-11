@@ -31,7 +31,7 @@ npx playwright install chromium
 npm run thumbnails
 ```
 
-Thumbnails are saved in `public/assets/thumbnails/`. Make sure to commit them before pushing to GitHub!
+Thumbnails use a 720×405 viewport at 2× resolution for readable text in link previews. They are saved in `public/assets/thumbnails/`. Make sure to commit them before pushing to GitHub!
 
 ## 📁 Project Structure
 
