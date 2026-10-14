@@ -27,7 +27,7 @@ const training = {
             'Research real 0-days',
             'Develop exploits for vulnerabilities found during the training',
         ],
-        'Day 3 — AI': [
+        'Day 3 - AI': [
             'AI-assisted vulnerability research',
             'Automate code audits and variant analysis with LLMs',
             'AI-assisted fuzzing, triage, and exploit development',

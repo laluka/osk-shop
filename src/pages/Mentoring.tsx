@@ -21,7 +21,7 @@ const Mentoring = () => (
                     {team.map((member) => (
                         <li key={member.name}>
                             <strong className="font-semibold text-white">{member.name}</strong>
-                            {' — '}
+                            {' - '}
                             {member.skills.length > 0 ? member.skills.join(', ') : 'Skills to be announced.'}
                         </li>
                     ))}

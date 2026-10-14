@@ -20,18 +20,20 @@ export const team: TeamMember[] = [
         },
     },
     {
-        name: 'Researcher X',
+        name: 'Baptiste p4st1s',
         bio: 'Introduction coming soon.',
         skills: [],
     },
     {
-        name: 'Researcher Y',
-        bio: 'Introduction coming soon.',
-        skills: [],
+        name: '7h30th3r0n3',
+        image: '/assets/original/7h30.png',
+        bio: 'Flavien Ruffel. Working in offensive security since 2020, with a passion for hardware red teaming and for sharing knowledge through teaching and mentoring.',
+        skills: ['Pentesting', 'Hardware RedTeam', 'OSINT', 'Tooling', 'Mentoring'],
     },
     {
-        name: 'Researcher Z',
-        bio: 'Introduction coming soon.',
-        skills: [],
+        name: 'Noobosaurus R3x',
+        image: '/assets/original/noobo.png',
+        bio: 'Hacking with passion. Sharing what I know, learning as I go.',
+        skills: ['Pentesting', 'Mentoring', 'OSINT'],
     },
 ];

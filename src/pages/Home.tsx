@@ -56,7 +56,7 @@ const Home = () => {
                 <h2 className="text-2xl font-semibold mb-4">About Us</h2>
                 <p className="text-gray-300 max-w-3xl mb-7">
                     We're four independent collaborators working as peers. We combine our skills in offensive security
-                    with Hardware & IoT, OSINT, and Reverse Engineering. We aim to work in pairs and stay close to your team,
+                    for Web, Cloud, Hardware & IoT, OSINT, and Reverse Engineering. We aim to work in pairs and stay close to your team,
                     sharing what we find and how to fix it.
                 </p>
                 <TeamProfiles />
