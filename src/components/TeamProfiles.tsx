@@ -7,7 +7,7 @@ const TeamProfiles = () => (
                 <img
                     src={`${import.meta.env.BASE_URL}${(member.image ?? '/assets/placeholders/researcher.svg').slice(1)}`}
                     alt={member.image ? member.name : `Portrait placeholder for ${member.name}`}
-                    className="w-20 sm:w-28 aspect-square object-cover rounded-sm shrink-0"
+                    className="w-20 sm:w-28 aspect-[4/5] object-cover object-center rounded-sm shrink-0"
                     loading="lazy"
                 />
                 <div className="min-w-0">
