@@ -34,8 +34,8 @@ async function generateThumbnails() {
     console.log('📸 Starting browser...');
     const browser = await chromium.launch();
     const context = await browser.newContext({
-        viewport: { width: 720, height: 405 },
-        deviceScaleFactor: 2,
+        viewport: { width: 1920, height: 1080 },
+        deviceScaleFactor: 1,
     });
 
     for (const route of routes) {
