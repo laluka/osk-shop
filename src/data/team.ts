@@ -11,8 +11,8 @@ export const team: TeamMember[] = [
     {
         name: 'Laluka',
         image: '/assets/original/louka-laluka.png',
-        bio: 'Louka Jacques-Chevallier. Working in offensive security since 2019, with a love for sharing knowledge through teaching and mentoring.',
-        skills: ['Pentesting', 'Code Audits', 'Tooling', 'Mentoring'],
+        bio: 'Louka Jacques-Chevallier. Working in offensive security since 2019, he specializes in Web, Cloud, and Linux code audits and 0-day research, with a love for sharing knowledge through teaching and mentoring.',
+        skills: ['Pentesting', 'Web', 'Cloud', 'Linux', 'Code Audits', '0-day Research', 'Tooling', 'Mentoring'],
         bookingImages: {
             hour: '/assets/original/mentoring-1h.png',
             day: '/assets/original/mentoring-1d.png',
@@ -20,9 +20,10 @@ export const team: TeamMember[] = [
         },
     },
     {
-        name: 'Baptiste p4st1s',
-        bio: 'Introduction coming soon.',
-        skills: [],
+        name: 'p4st1s',
+        image: '/assets/original/p4st1s.png',
+        bio: 'Baptiste Rolando. A tireless builder and the most energetic member of the group, he is often on the road and focuses on Web, Cloud, and Linux pentesting.',
+        skills: ['Pentesting', 'Web', 'Cloud', 'Linux', 'Tooling', 'FunAtParties'],
     },
     {
         name: '7h30th3r0n3',
